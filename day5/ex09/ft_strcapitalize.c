@@ -6,17 +6,20 @@
 /*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:58:11 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/05 13:16:13 by rebrahim         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:53:02 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-char	*ft_strcapitalize(char *str);
-
 int	is_alpha(char c)
 {
 	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+
+int	is_numeric(char str)
+{
+	return ((str >= '0' || str <= '9'));
 }
 
 char	adjust_case(char c, int in_word)
@@ -42,8 +45,10 @@ char	*ft_strcapitalize(char *str)
 			str[index] = adjust_case(str[index], is_start_of_word);
 			is_start_of_word = 1;
 		}
-		else
+		else if (is_numeric(str[index]))
+		{
 			is_start_of_word = 0;
+		}
 		index++;
 	}
 	return (str);

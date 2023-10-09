@@ -6,7 +6,7 @@
 /*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:38:20 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/05 13:15:11 by rebrahim         ###   ########.fr       */
+/*   Updated: 2023/10/09 15:25:28 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	ft_putstr_non_printable(char *str)
 		str++;
 	}
 }
-/* int	main(void)
+ int	main(void)
 {
-	//char test[] = "Coucou\ntu vas bien ?";
-	char test[] ="\\";
+	char test[] = "Coucou\ntu vas bien ?";
+	//char test[] ="\\";
 	ft_putstr_non_printable(test);
 	return (0);
 }
 
- */
+ 

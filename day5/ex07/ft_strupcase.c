@@ -6,19 +6,17 @@
 /*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:09:12 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/04 21:16:28 by rebrahim         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:51:03 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-char	*ft_strupcase(char *str);
-
 char	*ft_strupcase(char *str)
 {
 	char	*start;
 
-	*start = str;
+	start = str;
 	while (*str)
 	{
 		if (*str >= 'a' && *str <= 'z')
