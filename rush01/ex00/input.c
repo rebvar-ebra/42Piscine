@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrolova <lfrolova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:48:23 by lfrolova          #+#    #+#             */
-/*   Updated: 2023/10/08 16:33:14 by lfrolova         ###   ########.fr       */
+/*   Updated: 2023/10/11 20:22:25 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "library.h"
+
 #include <stdlib.h>
 
 int	arg_check(int argc, char **argv)
@@ -34,6 +34,8 @@ int	*transform_input(char *str)
 	i = 0;
 	j = 0;
 	input_array = malloc(16 * sizeof(int));
+	while (input_array == NULL)
+		return (NULL);
 	while (str[i] != '\0')
 	{
 		if (str[i] >= '0' && str[i] <= '9')

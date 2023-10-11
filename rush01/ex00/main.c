@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmackel <lmackel@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:32:35 by lfrolova          #+#    #+#             */
-/*   Updated: 2023/10/08 20:29:50 by lmackel          ###   ########.fr       */
+/*   Updated: 2023/10/11 20:21:48 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,12 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	input = transform_input(argv[1]);
+	while (input == NULL)
+		return (NULL);
 	if (solve_puzzle(grid, input, 0) == 0)
 		print_solution(grid);
 	else
 		ft_putstr("Error\n");
 	return (0);
+	free(input);
 }
