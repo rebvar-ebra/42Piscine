@@ -6,11 +6,11 @@
 /*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:39:52 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/12 16:43:50 by rebrahim         ###   ########.fr       */
+/*   Updated: 2023/10/15 18:17:27 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 int	ft_recursive_power(int nb, int power)
 {
@@ -20,7 +20,7 @@ int	ft_recursive_power(int nb, int power)
 		return (1);
 	return (nb * ft_recursive_power(nb, power -1));
 }
-/* int	main(void)
+int	main(void)
 {
 	int	nb;
 	int	power;
@@ -32,4 +32,3 @@ int	ft_recursive_power(int nb, int power)
 	return (0);
 
 }
- */

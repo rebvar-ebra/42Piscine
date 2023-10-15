@@ -6,11 +6,11 @@
 /*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 16:22:14 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/12 16:42:58 by rebrahim         ###   ########.fr       */
+/*   Updated: 2023/10/15 19:16:41 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 int	fibo(int n, int a, int b)
 {
@@ -33,4 +33,5 @@ int	ft_fibonacci(int index)
 	int result = ft_fibonacci(nb);
 	printf("ft_fibonacci(%d) = %d\n", nb, result);
 	return (0);
-} */
+}
+ */
