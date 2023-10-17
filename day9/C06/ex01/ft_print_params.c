@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 15:39:52 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/17 20:25:11 by rebrahim         ###   ########.fr       */
+/*   Created: 2023/10/15 12:29:05 by rebrahim          #+#    #+#             */
+/*   Updated: 2023/10/17 10:23:48 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_recursive_power(int nb, int power)
+void	ft_str(char *str)
 {
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	return (nb * ft_recursive_power(nb, power -1));
+	while (*str)
+		write (1, str++, 1);
+	write (1, "\n", 1);
 }
-/* int	main(void)
-{
-	int	nb;
-	int	power;
 
-	nb = 3;
-	power = 3;
-	int result = ft_recursive_power(nb , power);
-	printf("ft_iterative_power(%d)(%d) = %d\n" , nb, power, result);
+int	main(int argc, char *argv[])
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		ft_str(argv[i]);
+		i++;
+	}
 	return (0);
-
 }
- */

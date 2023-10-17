@@ -6,7 +6,7 @@
 /*   By: rebrahim <rebrahim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 17:39:54 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/15 19:16:04 by rebrahim         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:23:41 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_is_prime(int nb)
 		return (1);
 	if (nb % 2 == 0)
 		return (0);
-	while (i * i <= nb)
+	while (i * i <= nb+1)
 	{
 		if (nb % i == 0)
 			return (0);
