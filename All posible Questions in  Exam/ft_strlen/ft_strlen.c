@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rebrahim <rebrahim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 12:54:58 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/18 15:32:09 by rebrahim         ###   ########.fr       */
+/*   Created: 2023/10/18 16:08:46 by rebrahim          #+#    #+#             */
+/*   Updated: 2023/10/18 16:10:53 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_swap (int *a, int *b)
+int	ft_strlen(char *str)
 {
-	int temp;
+	int i;
+	i =0;
 
-	while(*a || *b)
-	{
-		temp = *a;
-		*a = *b;
-		*b =temp;
+	while(str[i]!='\0')
+		i++;
+	return(i);
 }
+
