@@ -1,36 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rebrahim <rebrahim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:30:23 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/19 12:06:32 by rebrahim         ###   ########.fr       */
+/*   Created: 2023/10/19 16:59:32 by rebrahim          #+#    #+#             */
+/*   Updated: 2023/10/19 17:23:30 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-int is_space(char c)
+#include <stdlib.h>
+
+int ft_abs(int x)
 {
-    return (c == ' ' || (c >= 9 && c <= 13));
+	if(x <0)
+		return(-x);
+	return(x);
 }
-int	main(int argc, char *argv[])
+int     *ft_range(int start, int end)
 {
 	int i;
-	
-	i = 0;
-	if(argc ==2)
+	int size;
+
+	int *tab;
+	int *d;
+	size = ft_abs(end-start)+1;
+	d =(tab=malloc(size *(sizeof(int)));
+	if(!d)
+		return(0);
+	i =0;
+	if(size ==1)
+		tab[0]=start;
+	if(start <end)
 	{
-		while(is_space(argv[1][i]))
-			i++;
-		while(!is_space(argv[1][i]) && argv[1][i] !='\0')
+		while(i <size)
 		{
-			write(1,&argv[1][i],1);
+			tab[i] = start+i;
 			i++;
 		}
 	}
-	write(1,"\n",1);
-	return(0);
+	else if(start >end)
+	{
+		while (i <size)
+		{
+			tab[i]= start -i;
+			i++;
+		}
+	}
+	return(tab);
+
+
 }
 

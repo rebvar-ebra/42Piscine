@@ -1,36 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   rot_13.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rebrahim <rebrahim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:30:23 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/19 12:06:32 by rebrahim         ###   ########.fr       */
+/*   Created: 2023/10/19 12:40:11 by rebrahim          #+#    #+#             */
+/*   Updated: 2023/10/19 13:22:42 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
-int is_space(char c)
+char get_letter(char c)
 {
-    return (c == ' ' || (c >= 9 && c <= 13));
-}
-int	main(int argc, char *argv[])
-{
-	int i;
+	char j;
+
+	j = c;
+	if (j == 'z')
+		(j='m');
 	
-	i = 0;
+	else if(j == 'Z')
+		j = 'M';
+	
+	else if((j >= 'a' && j<= 'm')|| (j >='A' && j<='M'))
+			j+=13;
+	
+	else if((j >='n' && j <= 'z') || (j >='n' && j <= 'z'))
+			j-=13;
+	else
+		return(c);
+	return(j);
+
+}
+
+int main(int argc,char **argv)
+{
+	char c;
 	if(argc ==2)
 	{
-		while(is_space(argv[1][i]))
-			i++;
-		while(!is_space(argv[1][i]) && argv[1][i] !='\0')
+		while(*argv[1])
 		{
-			write(1,&argv[1][i],1);
-			i++;
+			c = get_letter(*argv[1]);
+			write(1,&c,1);
+			argv[1]++;
 		}
 	}
 	write(1,"\n",1);
 	return(0);
 }
-

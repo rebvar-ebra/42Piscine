@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   rotone.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rebrahim <rebrahim@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:30:23 by rebrahim          #+#    #+#             */
-/*   Updated: 2023/10/19 12:06:32 by rebrahim         ###   ########.fr       */
+/*   Created: 2023/10/19 12:08:51 by rebrahim          #+#    #+#             */
+/*   Updated: 2023/10/19 12:39:39 by rebrahim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include <unistd.h>
-int is_space(char c)
-{
-    return (c == ' ' || (c >= 9 && c <= 13));
-}
-int	main(int argc, char *argv[])
+
+int	main(int argc,char *argv[])
 {
 	int i;
-	
-	i = 0;
-	if(argc ==2)
-	{
-		while(is_space(argv[1][i]))
-			i++;
-		while(!is_space(argv[1][i]) && argv[1][i] !='\0')
+
+	i= 0;
+		if(argc ==2)
 		{
-			write(1,&argv[1][i],1);
-			i++;
+			while(argv[1][i])
+			{
+				if(argv[1][i] =='z' || argv[1][i] == 'Z')
+					argv[1][i] -=25;
+				else if((argv[1][i] >= 'a' && argv[1][i] <= 'y')||(argv[1][i] >= 'A' && argv[1][i]<='Y'))
+					argv[1][i] +=1;
+				write(1,&argv[1][i],1);
+				i++;
+			}
+		
 		}
-	}
+
 	write(1,"\n",1);
 	return(0);
-}
 
+}
